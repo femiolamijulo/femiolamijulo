@@ -53,34 +53,44 @@
       .site-footer a:hover {
         text-decoration: underline;
       }
-      .fade-in {
+      .scroll-reveal {
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 1s ease-out forwards;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       }
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: none;
       }
       .cutout-img {
         width: 280px;
         max-width: 90%;
         object-fit: contain;
         filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.15));
-        animation: fadeInUp 1s ease-out forwards;
-        transform: translateY(15px);
-        opacity: 0;
-        animation-delay: 0.4s;
-        animation-fill-mode: forwards;
         -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
       }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+      });
+    </script>
   </head>
   <body>
-    <header class="site-header fade-in">
+    <header class="site-header scroll-reveal">
       <nav class="nav">
         <div class="container flex-wrap">
           <h1 class="logo">
@@ -96,7 +106,7 @@
       </nav>
     </header>
 
-    <article class="page container fade-in">
+    <article class="page container scroll-reveal">
       <div class="page-content">
         <div class="page-intro">
           <div class="page-intro-item">
@@ -115,11 +125,11 @@
             </div>
           </div>
           <div class="page-intro-item">
-            <img src="assets/olufemi-Olamijulo-professional.png" alt="Olufemi Olamijulo" class="cutout-img" />
+            <img src="assets/olufemi-Olamijulo-professional.png" alt="Olufemi Olamijulo" class="cutout-img scroll-reveal" />
           </div>
         </div>
 
-        <div class="container fade-in">
+        <div class="container scroll-reveal">
           <p class="highlight-box">
             👋🏽 Hi there! I'm Femi — an urban strategist, policy analyst, and geospatial technologist passionate about equitable development and sustainable infrastructure. I bring systems thinking and spatial intelligence to global development challenges.
           </p>
@@ -132,7 +142,7 @@
           </p>
         </div>
 
-        <div class="container lines fade-in">
+        <div class="container lines scroll-reveal">
           <h1 id="projects" class="header-name">Selected Projects</h1>
           <ul class="list">
             <li>🛰️ <strong>United Nations:</strong> Geospatial co-author of artisanal mining & ESG policy report in the DRC.</li>
@@ -142,7 +152,7 @@
           </ul>
         </div>
 
-        <div class="container fade-in">
+        <div class="container scroll-reveal">
           <div class="line">
             <h1 id="news" class="header-name">Latest News</h1>
             <h1 class="thicker">2024</h1>
@@ -155,7 +165,7 @@
           </div>
         </div>
 
-        <footer class="site-footer fade-in">
+        <footer class="site-footer scroll-reveal">
           <div class="container">
             <small><b>Last Updated:</b> March, 2025</small>
             <small class="block">
