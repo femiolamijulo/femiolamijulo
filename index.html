@@ -53,13 +53,6 @@
       .site-footer a:hover {
         text-decoration: underline;
       }
-      .divider {
-        background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
-        background-repeat: repeat;
-        height: 30px;
-        margin: 40px 0;
-        opacity: 0.15;
-      }
       .fade-in {
         opacity: 0;
         transform: translateY(20px);
@@ -81,6 +74,8 @@
         opacity: 0;
         animation-delay: 0.4s;
         animation-fill-mode: forwards;
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
       }
     </style>
   </head>
@@ -137,8 +132,6 @@
           </p>
         </div>
 
-        <div class="divider"></div>
-
         <div class="container lines fade-in">
           <h1 id="projects" class="header-name">Selected Projects</h1>
           <ul class="list">
@@ -148,8 +141,6 @@
             <li>📡 <strong>Accord Engineering:</strong> Delivered 500+ telecom towers across West Africa, improving connectivity.</li>
           </ul>
         </div>
-
-        <div class="divider"></div>
 
         <div class="container fade-in">
           <div class="line">
