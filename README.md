@@ -1,7 +1,7 @@
-<h1 align="center">🌍 Femi Olamijulo</h1>
+<h1 align="center"> Femi Olamijulo</h1>
 
 <p align="center">
-  <b>Urban Strategist | Geospatial Technologist | Climate Systems Thinker</b><br>
+  <b>Urban Strategist | Geospatial Analyst | Climate Systems Thinker</b><br>
   Equipping cities & institutions to navigate the clean-energy transition with spatial intelligence and justice-driven policy.
 </p>
 
@@ -52,6 +52,24 @@ Led neighborhood mobility analysis for a low-income immigrant community in Lowel
 
 ---
 
+### 🧭 *Francis Kéré StoryMap*  
+In this StoryMap, we follow Francis’ firm, Kéré Architecture, around the world starting from his very first project, Gando Primary School.
+🗺️ [Explore StoryMap →](https://aadn.gsd.harvard.edu/2024/03/22/francis-kere-storymap/)
+
+---
+
+### 🧭 *Nexus Season Two*  
+This AADN StoryMap provides a geospatial exploration for our season two listeners. Read further to explore the projects that galvanize our podcast guests and that embody their prolific work.
+🗺️ [Explore StoryMap →](https://aadn.gsd.harvard.edu/2023/10/20/the-nexus-season-two-storymap/)
+
+---
+
+### 🧭 *Sekou Cooke StoryMap*  
+In this StoryMap, we journey with Sekou Cooke from the first Black in Design Conference at Harvard on Sunday, November 17, 2013, to his current design practice and we examine his contributions to Hip-Hop Architecture.
+🗺️ [Explore StoryMap →](https://aadn.gsd.harvard.edu/2023/10/18/sekou-cooke-storymap/)
+
+---
+
 ### 🧭 *Oakland StoryMap*  
 Examined some of the critical events that have shaped the Harlem of the West and also highlights some of the Black urbanists who have contributed to shaping its historical and contemporary identities. 
 🗺️ [Explore StoryMap →](https://aadn.gsd.harvard.edu/2023/04/13/oakland-ca-storymap/)
@@ -86,5 +104,5 @@ Examined some of the critical events that have shaped the Harlem of the West and
 > — Femi Olamijulo
 
 <p align="center">
-  <sub><i>Last updated: March 2025 • Built with ❤️ and StoryMaps</i></sub>
+  <sub><i>Last updated: March 2025 • Built with ❤️ and a thirst to learn how to be better.</i></sub>
 </p>
