@@ -38,23 +38,23 @@ Analyzed satellite imagery + mine locations in South Katanga to uncover how **ar
 
 ---
 
-### 🏙️ *Everett TOD*: Designing for Belonging  
-StoryMap spotlighting how a rapidly developing, immigrant-rich city can grow **without displacing its core communities**.  
+### 🏙️ *Everett TOD*: Everett Express  
+Transitioning a 95-acre industrial city parcel to mixed-use development in Everett, Massachusetts.  
 🏆 *2024 Esri Innovation Program Winner – Harvard*  
 🗺️ [Explore the StoryMap →](https://storymaps.arcgis.com/collections/e69f6055ef7f44049ab610608eb32202?item=12)
 
 ---
 
 ### 🚶🏽 *Centralville Mobility Plan*  
-Led neighborhood mobility analysis for a low-income immigrant community in Lowell, MA. Exposed deep gaps in pedestrian safety, access to groceries, and bus frequency.  
+Led neighborhood mobility analysis for a low-income immigrant community in Lowell, MA. Exposed deep gaps in pedestrian safety, access to groceries, and bus service.  
 📄 [Read the full plan (PDF) →](assets/Centralville%20Transit%20%26%20Mobility%20Plan%20for%20the%20Lowell%20Neighborhood%20Initiative.pdf)  
 🛣️ GIS • Accessibility Mapping • Community-Based Planning
 
 ---
 
-### 🧭 *Oakland Black Cultural StoryMap*  
-Mapped displacement pressures + preservation pathways for Oakland’s Black neighborhoods with the African American Design Nexus.  
-🗺️ [Explore StoryMap →](https://arcg.is/1DvuP50)
+### 🧭 *Oakland StoryMap*  
+Examined some of the critical events that have shaped the Harlem of the West and also highlights some of the Black urbanists who have contributed to shaping its historical and contemporary identities. 
+🗺️ [Explore StoryMap →](https://aadn.gsd.harvard.edu/2023/04/13/oakland-ca-storymap/)
 
 ---
 
