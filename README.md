@@ -34,7 +34,7 @@ Analyzed satellite imagery + mine locations in South Katanga to uncover how **ar
 📄 [Read the full Belfer publication →](assets/Africa%20Futures%20Project%20publication.pdf)  
 🧠 Machine Learning • R • LandTrendr • UNOSAA Capstone
 
-> _“When cobalt prices fall, trees fall. Forests become fallback farms. That’s the cost of a volatile green future.”_
+> _“Our analysis reveals that despite global efforts towards environmental sustainability, deforestation rates in the DRC have not significantly decreased over the last 20 years. Mapping data indicates extensive forest change, primarily in regions with high artisanal mining activity.”_
 
 ---
 
@@ -64,9 +64,12 @@ Examined some of the critical events that have shaped the Harlem of the West and
 |------|-------------|
 | 2024 | 🥇 Esri Innovation Prize – Harvard Student of the Year |
 | 2024 | 🎙️ Moderator, Harvard Climate Leaders Conference |
-| 2024 | 🏅 GSD Award for Leadership in Urban Planning & Design |
-| 2023 | 🛰️ UN Capstone on African Carbon Markets + Mining |
-
+| 2024 | 🏅 Award for Outstanding Leadership in Urban Planning & Design at Harvard |
+| 2024 | 🌍 Young Leader, Global Leadership Challenge (University of Oxford & St. Gallen Symposium)
+| 2023 | 🛰️ Capstone Consultant, United Nations Office of the Special Adviser on Africa (Voluntary Carbon Markets & Mining) |
+| 2023 | 🤝 Ambassador Juster Fellow, United Nations Secretariat |
+| 2021 | 🎓 Harvard University President’s Scholar |
+| 2019 | 🏛️ Lagos State Governor’s Merit Award |
 ---
 
 ## 📁 Quick Access
