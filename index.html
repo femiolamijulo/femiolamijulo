@@ -46,26 +46,6 @@
     </style>
   </head>
 
-  <script>
-  particlesJS("particles-js", {
-    particles: {
-      number: { value: 60, density: { enable: true, value_area: 800 } },
-      color: { value: "#cdece3" },
-      shape: { type: "circle" },
-      opacity: { value: 0.3 },
-      size: { value: 4, random: true },
-      line_linked: { enable: false },
-      move: { enable: true, speed: 0.5, direction: "none", out_mode: "out" }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: { onhover: { enable: false }, onclick: { enable: false } },
-      modes: {}
-    },
-    retina_detect: true
-  });
-</script>
-
   <body>
     <div id="particles-js"></div>
     <header class="site-header scroll-reveal">
@@ -142,5 +122,24 @@
         </footer>
       </div>
     </article>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 60, density: { enable: true, value_area: 800 } },
+          color: { value: "#cdece3" },
+          shape: { type: "circle" },
+          opacity: { value: 0.3 },
+          size: { value: 4, random: true },
+          line_linked: { enable: false },
+          move: { enable: true, speed: 0.5, direction: "none", out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: { onhover: { enable: false }, onclick: { enable: false } },
+          modes: {}
+        },
+        retina_detect: true
+      });
+    </script>
   </body>
 </html>
