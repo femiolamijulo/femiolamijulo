@@ -319,3 +319,11 @@
   display: block;
   height: 100%;
 }
+.cutout-img {
+  width: 280px;
+  max-width: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.15));
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
