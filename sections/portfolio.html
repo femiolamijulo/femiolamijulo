@@ -1,299 +1,236 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio | Femi Olamijulo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Selected portfolio of urban strategy and geospatial equity projects by Femi Olamijulo." />
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Portfolio | Femi Olamijulo">
-    <meta property="og:description" content="Selected portfolio of urban strategy and geospatial equity projects by Femi Olamijulo.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com/sections/portfolio.html">
-    <meta property="og:image" content="https://yourwebsite.com/assets/olufemi-Olamijulo-professional.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="../assets/olufemi-Olamijulo-professional.png" type="image/x-icon">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../assets/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    
-    <!-- Page-specific CSS -->
-    <style>
-      /* Particles container styling */
-      #particles-js {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        pointer-events: none;
-      }
-      
-      /* Ensure content stays above particles */
-      .page, .site-header, .site-footer {
-        position: relative;
-        z-index: 1;
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-      
-      /* Portfolio grid styling */
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Portfolio | Femi Olamijulo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected portfolio of urban strategy and geospatial equity projects by Femi Olamijulo.">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/variables.css">
+  <link rel="stylesheet" href="../assets/layout.css">
+  <link rel="stylesheet" href="../assets/components.css">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 
-      .project-card {
-        background: #f8f8f8;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease;
-      }
+<body>
+  <div id="particles-js" aria-hidden="true"></div>
 
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
+  <button id="mode-toggle" aria-label="Toggle dark mode">
+    <span class="light-icon">☀️</span>
+    <span class="dark-icon">🌙</span>
+  </button>
 
-      .project-card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-      }
+  <header class="site-header scroll-reveal">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container flex-wrap">
+        <h1 class="logo"><a href="../index.html">Femi Olamijulo</a></h1>
+        <ul class="navbar">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="../assets/Olufemi-Olamijulo-Resume.pdf" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-      .project-card h3 {
-        font-size: 1.1rem;
-        margin: 0.8em 1em 0.2em;
-      }
+  <main class="page container scroll-reveal">
+    <h1 class="header-name">Selected Projects</h1>
+    <p class="portfolio-intro">
+      A curated selection of projects spanning climate equity, spatial storytelling, and infrastructure planning — combining maps, models, and narratives.
+    </p>
 
-      .project-card p {
-        font-size: 0.95rem;
-        margin: 0 1em 0.6em;
-        color: #444;
-      }
+    <div class="filter-bar" role="toolbar" aria-label="Project filter options">
+      <button class="filter-button active" data-tag="all" aria-pressed="true">All</button>
+      <button class="filter-button" data-tag="climate" aria-pressed="false">🌱 Climate</button>
+      <button class="filter-button" data-tag="equity" aria-pressed="false">⚖️ Equity</button>
+      <button class="filter-button" data-tag="storymap" aria-pressed="false">🗺️ StoryMap</button>
+      <button class="filter-button" data-tag="design" aria-pressed="false">✏️ Design</button>
+    </div>
 
-      .project-card a {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        height: 100%;
-      }
-
-      .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin: 0 1em 1em;
-      }
-
-      .badge {
-        background: #cdece3;
-        color: #034f40;
-        font-size: 0.75rem;
-        padding: 4px 8px;
-        border-radius: 6px;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-        text-transform: uppercase;
-      }
-
-      .scroll-reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      }
-
-      .scroll-reveal.revealed {
-        opacity: 1;
-        transform: none;
-      }
-    </style>
-  </head>
-  
-  <body>
-    <!-- Particles.js Container -->
-    <div id="particles-js"></div>
-    
-    <header class="site-header scroll-reveal">
-      <nav class="nav">
-        <div class="container flex-wrap">
-          <h1 class="logo"><a href="../index.html" aria-label="Home">Femi Olamijulo</a></h1>
-          <ul class="navbar">
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="../index.html#news">News</a></li>
-            <li><a href="../assets/Olufemi-Olamijulo-Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main class="page container scroll-reveal">
-      <h1 class="header-name">Selected Projects</h1>
-      <p style="text-align:center; max-width: 600px; margin: 0 auto 2rem;">
-        A curated selection of projects spanning climate equity, spatial storytelling, and infrastructure planning — combining maps, models, and narratives.
-      </p>
-
-      <div class="portfolio-grid">
-        <div class="project-card scroll-reveal">
-          <a href="../assets/Africa%20Futures%20Project%20publication.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/africa-futures.jpg" alt="Africa Futures Report cover showing data visualization" />
+    <div class="portfolio-grid">
+      <article class="project-card scroll-reveal" data-tags="climate gis">
+        <a href="../assets/Africa%20Futures%20Project%20publication.pdf" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/africa-futures.jpg" alt="Africa Futures Report" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Africa Futures – Belfer/UNOSAA</h3>
             <p>Mapped artisanal cobalt mining & deforestation in DRC using R, Landsat, and LandTrendr.</p>
             <div class="badges">
-              <span class="badge">Report</span>
-              <span class="badge">Climate</span>
               <span class="badge">GIS</span>
+              <span class="badge">Climate</span>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="project-card scroll-reveal">
-          <a href="https://storymaps.arcgis.com/collections/e69f6055ef7f44049ab610608eb32202?item=12" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/everett.gif" alt="Everett TOD StoryMap preview animation" />
+      <article class="project-card scroll-reveal" data-tags="storymap equity">
+        <a href="https://storymaps.arcgis.com/collections/e69f6055ef7f44049ab610608eb32202?item=12" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/everett.gif" alt="Everett TOD StoryMap" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Everett Express</h3>
             <p>Redevelopment plan for a 95-acre industrial site in Everett, MA. Esri Prize-winning StoryMap.</p>
             <div class="badges">
               <span class="badge">StoryMap</span>
               <span class="badge">Equity</span>
-              <span class="badge">Planning</span>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="project-card scroll-reveal">
-          <a href="../assets/Centralville%20Transit%20%26%20Mobility%20Plan%20for%20the%20Lowell%20Neighborhood%20Initiative.pdf" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/centralville.png" alt="Centralville Mobility Plan diagram" />
+      <article class="project-card scroll-reveal" data-tags="equity design">
+        <a href="../assets/Centralville%20Transit%20%26%20Mobility%20Plan%20for%20the%20Lowell%20Neighborhood%20Initiative.pdf" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/centralville.png" alt="Centralville Mobility Plan" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Centralville Mobility Plan</h3>
             <p>Equity-focused planning for transit, sidewalks, and public realm improvements in Lowell, MA.</p>
             <div class="badges">
-              <span class="badge">Mobility</span>
-              <span class="badge">Accessibility</span>
-              <span class="badge">PDF</span>
+              <span class="badge">Design</span>
+              <span class="badge">Equity</span>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="project-card scroll-reveal">
-          <a href="https://aadn.gsd.harvard.edu/2024/03/22/francis-kere-storymap/" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/kere.jpg" alt="Francis Kéré architecture photo" />
+      <article class="project-card scroll-reveal" data-tags="design storymap">
+        <a href="https://aadn.gsd.harvard.edu/2024/03/22/francis-kere-storymap/" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/kere.jpg" alt="Francis Kéré StoryMap" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Francis Kéré StoryMap</h3>
             <p>Geospatial journey through the work of Francis Kéré and his architectural philosophy.</p>
             <div class="badges">
               <span class="badge">Design</span>
               <span class="badge">StoryMap</span>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="project-card scroll-reveal">
-          <a href="https://aadn.gsd.harvard.edu/2023/10/20/the-nexus-season-two-storymap/" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/nexus-season2.jpg" alt="Nexus Season Two promotional image" />
+      <article class="project-card scroll-reveal" data-tags="storymap design">
+        <a href="https://aadn.gsd.harvard.edu/2023/10/20/the-nexus-season-two-storymap/" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/nexus-season2.jpg" alt="Nexus Season Two" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Nexus Season Two</h3>
             <p>StoryMap companion to podcast season spotlighting Black design leaders and spatial projects.</p>
             <div class="badges">
               <span class="badge">StoryMap</span>
-              <span class="badge">Media</span>
+              <span class="badge">Design</span>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="project-card scroll-reveal">
-          <a href="https://aadn.gsd.harvard.edu/2023/10/18/sekou-cooke-storymap/" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/sekou.jpg" alt="Sekou Cooke portrait" />
+      <article class="project-card scroll-reveal" data-tags="design storymap">
+        <a href="https://aadn.gsd.harvard.edu/2023/10/18/sekou-cooke-storymap/" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/sekou.jpg" alt="Sekou Cooke StoryMap" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Sekou Cooke StoryMap</h3>
             <p>Explores the emergence of Hip-Hop Architecture through Sekou Cooke's journey and practice.</p>
             <div class="badges">
-              <span class="badge">Architecture</span>
-              <span class="badge">Culture</span>
+              <span class="badge">Design</span>
               <span class="badge">StoryMap</span>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
+      </article>
 
-        <div class="project-card scroll-reveal">
-          <a href="https://aadn.gsd.harvard.edu/2023/04/13/oakland-ca-storymap/" target="_blank" rel="noopener noreferrer">
-            <img src="../assets/thumbnails/Oakland.png" alt="Oakland neighborhood map" />
+      <article class="project-card scroll-reveal" data-tags="equity storymap">
+        <a href="https://aadn.gsd.harvard.edu/2023/04/13/oakland-ca-storymap/" target="_blank" rel="noopener">
+          <img src="../assets/thumbnails/Oakland.png" alt="Oakland StoryMap" loading="lazy" width="400" height="250">
+          <div class="project-content">
             <h3>Oakland StoryMap</h3>
             <p>Chronicles cultural displacement, resilience, and Black urbanism in Oakland, CA.</p>
             <div class="badges">
               <span class="badge">Equity</span>
               <span class="badge">StoryMap</span>
-              <span class="badge">History</span>
             </div>
-          </a>
-        </div>
-      </div>
-    </main>
+          </div>
+        </a>
+      </article>
+    </div>
+  </main>
 
-    <footer class="site-footer scroll-reveal">
-      <div class="container">
-        <small id="last-updated"></small>
-        <small class="block">
-          © Femi Olamijulo • 
-          <a href="https://github.com/femiolamijulo" target="_blank" rel="noopener noreferrer">GitHub</a> • 
-          <a href="https://nexuseng.org" target="_blank" rel="noopener noreferrer">nexuseng.org</a>
-        </small>
-      </div>
-    </footer>
+  <footer class="site-footer scroll-reveal">
+    <div class="container">
+      <small id="last-updated"></small>
+      <small class="block">© Femi Olamijulo • <a href="https://github.com/femiolamijulo" target="_blank" rel="noopener">GitHub</a> • <a href="https://nexuseng.org" target="_blank" rel="noopener">nexuseng.org</a></small>
+    </div>
+  </footer>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // Scroll reveal animation
-        const revealElements = document.querySelectorAll('.scroll-reveal');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        revealElements.forEach(el => observer.observe(el));
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="../assets/js/particles-config.js"></script>
+  <script src="../assets/js/mode-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("last-updated").innerHTML =
+        `<b>Last Updated:</b> ${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`;
 
-        // Last updated date with error handling
-        try {
-          const updatedEl = document.getElementById("last-updated");
-          if (updatedEl) {
-            const now = new Date();
-            const options = { month: 'long', year: 'numeric' };
-            updatedEl.innerHTML = `<b>Last Updated:</b> ${now.toLocaleDateString('en-US', options)}`;
+      // Scroll reveal animation
+      const revealElements = document.querySelectorAll('.scroll-reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
           }
-        } catch (e) {
-          console.error("Could not update date:", e);
-        }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
 
-        // Initialize particles
-        if (typeof particlesJS === 'function') {
-          particlesJS("particles-js", {
-            particles: {
-              number: { value: 60, density: { enable: true, value_area: 800 } },
-              color: { value: "#cdece3" },
-              shape: { type: "circle" },
-              opacity: { value: 0.3 },
-              size: { value: 4, random: true },
-              line_linked: { enable: false },
-              move: { enable: true, speed: 0.5, direction: "none", out_mode: "out" }
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: { onhover: { enable: false }, onclick: { enable: false } },
-              modes: {}
-            },
-            retina_detect: true
+      // Project filtering system
+      const filterButtons = document.querySelectorAll('.filter-button');
+      const projectCards = document.querySelectorAll('.project-card');
+      const noProjects = document.querySelector('.no-projects');
+
+      function updateVisibility() {
+        let visibleCount = 0;
+        
+        projectCards.forEach(card => {
+          if (card.classList.contains('visible')) {
+            visibleCount++;
+            card.removeAttribute('hidden');
+          } else {
+            card.setAttribute('hidden', 'true');
+          }
+        });
+
+        noProjects.classList.toggle('visible', visibleCount === 0);
+      }
+
+      function filterProjects(tag) {
+        projectCards.forEach(card => {
+          const tags = card.dataset.tags.toLowerCase().split(' ');
+          if (tag === 'all' || tags.includes(tag.toLowerCase())) {
+            card.classList.add('visible');
+          } else {
+            card.classList.remove('visible');
+          }
+        });
+
+        updateVisibility();
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tag = button.dataset.tag;
+          
+          // Update button states
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
           });
-        } else {
-          console.warn("particlesJS not loaded - animation disabled");
-        }
+          
+          button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
+          
+          // Filter projects
+          filterProjects(tag);
+        });
       });
-    </script>
-  </body>
+
+      // Initialize
+      noProjects.classList.remove('visible');
+      filterProjects('all');
+    });
+  </script>
+</body>
 </html>

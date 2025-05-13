@@ -1,0 +1,55 @@
+:root {
+  /* Light mode colors */
+  --bg-color: #ffffff;
+  --text-primary: #222222;
+  --text-secondary: #666666;
+  --accent-color: #0d9488; /* Teal-600 */
+  --accent-hover: #0f766e; /* Teal-700 */
+  --accent-light: #99f6e4; /* Teal-200 */
+  --link-color: #0d9488; /* Teal-600 */
+  --link-hover: #0f766e; /* Teal-700 */
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb; /* Gray-200 */
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode {
+  /* Dark mode colors */
+  --bg-color: #111827; /* Gray-900 */
+  --text-primary: #f9fafb; /* Gray-50 */
+  --text-secondary: #d1d5db; /* Gray-300 */
+  --accent-color: #2dd4bf; /* Teal-400 */
+  --accent-hover: #5eead4; /* Teal-300 */
+  --accent-light: #134e4a; /* Teal-900 */
+  --link-color: #5eead4; /* Teal-300 */
+  --link-hover: #2dd4bf; /* Teal-400 */
+  --card-bg: #1f2937; /* Gray-800 */
+  --card-border: #374151; /* Gray-700 */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Link styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Accent elements */
+.accent-text {
+  color: var(--accent-color);
+}
+
+button, .btn {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--accent-hover);
+}

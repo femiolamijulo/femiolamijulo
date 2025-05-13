@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News | Femi Olamijulo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Recent milestones, awards, and updates from Femi Olamijulo's professional journey." />
+  <link rel="stylesheet" href="../assets/variables.css" />
+  <link rel="stylesheet" href="../assets/layout.css" />
+  <link rel="stylesheet" href="../assets/components.css" />
+  <script src="../assets/js/mode-switcher.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="particles-js" aria-hidden="true"></div>
+
+  <button id="mode-toggle" aria-label="Toggle dark mode">
+    <span class="light-icon">☀️</span>
+    <span class="dark-icon">🌙</span>
+  </button>
+
+  <header class="site-header scroll-reveal">
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container flex-wrap">
+        <h1 class="logo"><a href="../index.html">Femi Olamijulo</a></h1>
+        <ul class="navbar">
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="news.html" aria-current="page">News</a></li>
+          <li><a href="../assets/Olufemi-Olamijulo-Resume.pdf" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page container scroll-reveal">
+    <h1 class="header-name">Latest News</h1>
+
+    <div class="filter-bar" role="toolbar" aria-label="News filter options">
+      <button class="filter-button active" data-tag="all" aria-pressed="true">All</button>
+      <button class="filter-button" data-tag="everett" aria-pressed="false">🏗️ Everett</button>
+      <button class="filter-button" data-tag="award" aria-pressed="false">🏆 Awards</button>
+      <button class="filter-button" data-tag="storytelling" aria-pressed="false">🧭 Storytelling</button>
+    </div>
+
+    <div class="news-timeline" role="list">
+      <article class="news-item visible" data-tags="everett award" role="listitem">
+        <img src="../assets/thumbnails/everett.gif" alt="Everett Redevelopment" loading="lazy" width="300" height="200">
+        <div class="news-content">
+          <h3 id="news-heading-1"><a href="https://www.hks.harvard.edu/faculty-research/policy-topics/cities-communities/when-proposing-redevelopment-ideas-abandoned-95" target="_blank" rel="noopener">Transforming Everett's Industrial Core</a></h3>
+          <p>Field Lab proposal on mixed-use redevelopment that won the 2024 Esri Innovation Prize.<br><em>Source: Harvard Kennedy School</em></p>
+        </div>
+      </article>
+
+      <article class="news-item visible" data-tags="everett" role="listitem">
+        <img src="../assets/thumbnails/Oakland.png" alt="City Hall Presentation" loading="lazy" width="300" height="200">
+        <div class="news-content">
+          <h3 id="news-heading-2"><a href="https://everettindependent.com/2023/05/10/harvard-kennedy-students-present-at-city-hall/" target="_blank" rel="noopener">Presentation at Everett City Hall</a></h3>
+          <p>Shared green corridor concepts with local officials and residents.<br><em>Source: Everett Independent</em></p>
+        </div>
+      </article>
+
+      <article class="news-item visible" data-tags="award" role="listitem">
+        <img src="../assets/thumbnails/centralville.png" alt="Esri Innovation Award" loading="lazy" width="300" height="200">
+        <div class="news-content">
+          <h3 id="news-heading-3"><a href="https://gis.harvard.edu/news/2024-eip-award-winner" target="_blank" rel="noopener">2024 Esri Innovation Award</a></h3>
+          <p>Recognized for using geospatial storytelling in equity-focused planning.<br><em>Source: Harvard CGA</em></p>
+        </div>
+      </article>
+
+      <article class="news-item visible" data-tags="storytelling" role="listitem">
+        <img src="../assets/thumbnails/kere.jpg" alt="Rappaport Interview" loading="lazy" width="300" height="200">
+        <div class="news-content">
+          <h3 id="news-heading-4"><a href="https://www.youtube.com/watch?v=SP8k8oyuAMc" target="_blank" rel="noopener">Rappaport Connects: Alumni Spotlight</a></h3>
+          <p>Interviewed on planning, equity, and GIS during and after Harvard.<br><em>Source: Rappaport Institute</em></p>
+        </div>
+      </article>
+
+      <article class="news-item visible" data-tags="storytelling" role="listitem">
+        <img src="../assets/thumbnails/sekou.jpg" alt="Storytelling Exhibit" loading="lazy" width="300" height="200">
+        <div class="news-content">
+          <h3 id="news-heading-5"><a href="https://www.gsd.harvard.edu/exhibition/stories-we-should-tell/" target="_blank" rel="noopener">Stories We Should Tell</a></h3>
+          <p>Featured in a GSD exhibit uplifting African and diasporic spatial storytelling.<br><em>Source: Harvard GSD</em></p>
+        </div>
+      </article>
+    </div>
+
+    <div class="no-news" aria-live="polite">No news items match these filters. Try another category.</div>
+  </main>
+
+  <footer class="site-footer scroll-reveal">
+    <div class="container">
+      <small id="last-updated"></small>
+      <small class="block">© Femi Olamijulo • <a href="https://github.com/femiolamijulo">GitHub</a> • <a href="https://nexuseng.org">nexuseng.org</a></small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Last updated date
+      document.getElementById("last-updated").innerHTML = `<b>Last Updated:</b> ${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`;
+
+      // Scroll reveal animation
+      const revealElements = document.querySelectorAll('.scroll-reveal');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealElements.forEach(el => observer.observe(el));
+
+      // News filtering system
+      const filterButtons = document.querySelectorAll('.filter-button');
+      const newsItems = document.querySelectorAll('.news-item');
+      const noNews = document.querySelector('.no-news');
+
+      function updateVisibility() {
+        let visibleCount = 0;
+        
+        newsItems.forEach(item => {
+          if (item.classList.contains('visible')) {
+            visibleCount++;
+            item.removeAttribute('hidden');
+          } else {
+            item.setAttribute('hidden', 'true');
+          }
+        });
+
+        noNews.classList.toggle('visible', visibleCount === 0);
+      }
+
+      function filterNews(tag) {
+        newsItems.forEach(item => {
+          const tags = item.dataset.tags.toLowerCase().split(' ');
+          if (tag === 'all' || tags.includes(tag.toLowerCase())) {
+            item.classList.add('visible');
+          } else {
+            item.classList.remove('visible');
+          }
+        });
+
+        updateVisibility();
+      }
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const tag = button.dataset.tag;
+          
+          // Update button states
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+          });
+          
+          button.classList.add('active');
+          button.setAttribute('aria-pressed', 'true');
+          
+          // Filter news
+          filterNews(tag);
+        });
+      });
+
+      // Initialize particles.js if available
+      if (typeof particlesJS === 'function') {
+        try {
+          particlesJS("particles-js", {
+            particles: {
+              number: { value: 80, density: { enable: true, value_area: 800 } },
+              color: { value: ["#7FFFD4", "#5F9EA0", "#00CED1"] },
+              shape: { type: "circle" },
+              opacity: { value: 0.7, random: true },
+              size: { value: 4, random: true },
+              line_linked: { enable: true, distance: 130, color: "#cdece3", opacity: 0.2, width: 1 },
+              move: { enable: true, speed: 0.5, direction: "none", out_mode: "out" }
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: { 
+                onhover: { enable: true, mode: "bubble" }, 
+                onclick: { enable: true, mode: "push" } 
+              },
+              modes: { 
+                bubble: { distance: 100, size: 8, duration: 0.3 }, 
+                push: { particles_nb: 4 } 
+              }
+            },
+            retina_detect: true
+          });
+        } catch (e) {
+          console.error("Particles.js initialization failed:", e);
+        }
+      } else {
+        console.warn("Particles.js not loaded - background animation disabled");
+      }
+    });
+  </script>
+</body>
+</html>
