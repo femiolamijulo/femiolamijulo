@@ -14,14 +14,36 @@
     <meta property="og:image" content="https://yourwebsite.com/assets/olufemi-Olamijulo-professional.png">
     
     <!-- Favicon -->
-    <link rel="icon" href="../assets/olufemi-Olamijulo-professional.png" type="image/x-icon">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap" rel="stylesheet" />
     
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    
     <!-- Page-specific CSS -->
     <style>
+      /* Particles container styling */
+      #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+      
+      /* Ensure content stays above particles */
+      .page, .site-header, .site-footer {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+      
+      /* Portfolio grid styling */
       .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -97,6 +119,9 @@
   </head>
   
   <body>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+    
     <header class="site-header scroll-reveal">
       <nav class="nav">
         <div class="container flex-wrap">
@@ -244,6 +269,29 @@
           }
         } catch (e) {
           console.error("Could not update date:", e);
+        }
+
+        // Initialize particles
+        if (typeof particlesJS === 'function') {
+          particlesJS("particles-js", {
+            particles: {
+              number: { value: 60, density: { enable: true, value_area: 800 } },
+              color: { value: "#cdece3" },
+              shape: { type: "circle" },
+              opacity: { value: 0.3 },
+              size: { value: 4, random: true },
+              line_linked: { enable: false },
+              move: { enable: true, speed: 0.5, direction: "none", out_mode: "out" }
+            },
+            interactivity: {
+              detect_on: "canvas",
+              events: { onhover: { enable: false }, onclick: { enable: false } },
+              modes: {}
+            },
+            retina_detect: true
+          });
+        } else {
+          console.warn("particlesJS not loaded - animation disabled");
         }
       });
     </script>
