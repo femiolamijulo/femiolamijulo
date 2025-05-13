@@ -21,14 +21,30 @@
               observer.unobserve(entry.target);
             }
           });
-        }, {
-          threshold: 0.1
-        });
-
+        }, { threshold: 0.1 });
         revealElements.forEach(el => observer.observe(el));
+
+        // Footer date
+        const updatedEl = document.getElementById("last-updated");
+        const now = new Date();
+        const options = { month: 'long', year: 'numeric' };
+        updatedEl.innerHTML = `<b>Last Updated:</b> ${now.toLocaleDateString('en-US', options)}`;
       });
     </script>
+    <style>
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
   </head>
+
   <body>
     <header class="site-header scroll-reveal">
       <nav class="nav">
@@ -37,7 +53,7 @@
             <a href="#">Femi Olamijulo</a>
           </h1>
           <ul class="navbar">
-            <li><a href="#index">About</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="sections/portfolio.html">Portfolio</a></li>
             <li><a href="#news">News</a></li>
             <li><a href="assets/Olufemi-Olamijulo-Resume.pdf">CV</a></li>
@@ -48,20 +64,14 @@
 
     <article class="page container scroll-reveal">
       <div class="page-content">
-        <div class="page-intro">
+        <div class="page-intro scroll-reveal">
           <div class="page-intro-item">
             <strong style="font-size: 1.2em;">Femi Olamijulo</strong><br /><br />
             Email: <a href="mailto:femi@nexuseng.org">femi@nexuseng.org</a><br />
             <div class="social">
-              <a class="social-item" href="https://github.com/femiolamijulo" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-              <a class="social-item" href="https://twitter.com/_femi_o" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a class="social-item" href="https://www.linkedin.com/in/femiolamijulo/" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+              <a class="social-item" href="https://github.com/femiolamijulo" target="_blank"><i class="fab fa-github"></i></a>
+              <a class="social-item" href="https://twitter.com/_femi_o" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a class="social-item" href="https://www.linkedin.com/in/femiolamijulo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
           <div class="page-intro-item">
@@ -97,7 +107,7 @@
 
         <footer class="site-footer scroll-reveal">
           <div class="container">
-            <small><b>Last Updated:</b> March, 2025</small>
+            <small id="last-updated"></small>
             <small class="block">
               © Femi Olamijulo. Adapted from
               <a href="https://stevenkolawole.github.io/" target="_blank">Steven Kolawole</a>
