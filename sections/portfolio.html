@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio | Femi Olamijulo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Selected portfolio of urban strategy and geospatial equity projects by Femi Olamijulo." />
+    <link rel="stylesheet" href="assets/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+      });
+    </script>
+    <style>
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .project-card {
+        background: #f8f8f8;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .project-card h3 {
+        font-size: 1.1rem;
+        margin: 0.8em 1em 0.2em;
+      }
+
+      .project-card p {
+        font-size: 0.95rem;
+        margin: 0 1em 1.2em;
+        color: #444;
+      }
+
+      .project-card a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header scroll-reveal">
+      <nav class="nav">
+        <div class="container flex-wrap">
+          <h1 class="logo"><a href="index.html">Femi Olamijulo</a></h1>
+          <ul class="navbar">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.html#news">News</a></li>
+            <li><a href="assets/Olufemi-Olamijulo-Resume.pdf" target="_blank">CV</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page container scroll-reveal">
+      <h1 class="header-name">Selected Projects</h1>
+
+      <div class="portfolio-grid">
+        <div class="project-card">
+          <a href="assets/Africa%20Futures%20Project%20publication.pdf" target="_blank">
+            <img src="assets/thumbnails/africa-futures.jpg" alt="Africa Futures Report">
+            <h3>Africa Futures – Belfer/UNOSAA</h3>
+            <p>Mapped artisanal cobalt mining & deforestation in DRC using R, Landsat, and LandTrendr.</p>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="https://storymaps.arcgis.com/collections/e69f6055ef7f44049ab610608eb32202?item=12" target="_blank">
+            <img src="assets/thumbnails/everett.jpg" alt="Everett TOD StoryMap">
+            <h3>Everett Express</h3>
+            <p>Redevelopment plan for a 95-acre industrial site in Everett, MA. Esri Prize-winning StoryMap.</p>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="assets/Centralville%20Transit%20%26%20Mobility%20Plan%20for%20the%20Lowell%20Neighborhood%20Initiative.pdf" target="_blank">
+            <img src="assets/thumbnails/centralville.jpg" alt="Centralville Mobility Plan">
+            <h3>Centralville Mobility Plan</h3>
+            <p>Accessibility & equity planning for transit and walkability in Lowell, MA.</p>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="https://aadn.gsd.harvard.edu/2024/03/22/francis-kere-storymap/" target="_blank">
+            <img src="assets/thumbnails/kere.jpg" alt="Francis Kéré StoryMap">
+            <h3>Francis Kéré StoryMap</h3>
+            <p>Geospatial journey through the work of Francis Kéré and his architectural philosophy.</p>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="https://aadn.gsd.harvard.edu/2023/10/20/the-nexus-season-two-storymap/" target="_blank">
+            <img src="assets/thumbnails/nexus-season2.jpg" alt="Nexus Season Two StoryMap">
+            <h3>Nexus Season Two</h3>
+            <p>Spatial companion to a podcast exploring Black design and planning in practice.</p>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="https://aadn.gsd.harvard.edu/2023/10/18/sekou-cooke-storymap/" target="_blank">
+            <img src="assets/thumbnails/sekou.jpg" alt="Sekou Cooke StoryMap">
+            <h3>Sekou Cooke StoryMap</h3>
+            <p>Maps Sekou Cooke’s design evolution and the emergence of Hip-Hop Architecture.</p>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a href="https://aadn.gsd.harvard.edu/2023/04/13/oakland-ca-storymap/" target="_blank">
+            <img src="assets/thumbnails/oakland.jpg" alt="Oakland StoryMap">
+            <h3>Oakland StoryMap</h3>
+            <p>Cultural preservation and gentrification mapping in Oakland’s Black neighborhoods.</p>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer scroll-reveal">
+      <div class="container">
+        <small><b>Last Updated:</b> March 2025</small>
+        <small class="block">
+          © Femi Olamijulo • <a href="https://github.com/femiolamijulo" target="_blank">GitHub</a> • <a href="https://nexuseng.org">nexuseng.org</a>
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>
