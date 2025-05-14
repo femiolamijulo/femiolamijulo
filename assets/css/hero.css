@@ -30,7 +30,7 @@
   gap: 3rem;
   align-items: center;
   min-height: 80vh;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .hero-image {
@@ -39,26 +39,25 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .profile-image {
-  position: relative;
-  z-index: 1;
-  overflow: visible;
-  isolation: isolate;
   width: 100%;
   max-width: 400px;
-  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
+  isolation: isolate;
   border-radius: 0 0 0 20px;
   transform: translateX(20%);
   opacity: 0;
-  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), 
-              opacity 1s ease;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease;
+
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 }
+
 
 .profile-image.revealed {
   transform: translateX(0);
@@ -71,18 +70,17 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30%; /* Adjust this to control how much of the bottom gets blurred */
+  height: 30%;
   z-index: 1;
   pointer-events: none;
-  background: transparent;
-  backdrop-filter: blur(8px); /* This creates the blur effect */
-  -webkit-backdrop-filter: blur(8px); /* For Safari support */
-  mask: linear-gradient(
-    to bottom, 
-    transparent 0%, 
-    black 100%
-  );
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  mask: linear-gradient(to bottom, transparent 0%, black 100%);
+  background: var(--fade-gradient); /* Optional soft color blending */
 }
+
 
 .hero-text {
   max-width: 600px;
