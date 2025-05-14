@@ -27,26 +27,31 @@
   <!-- Background Particles -->
   <div id="particles-js" aria-hidden="true"></div>
 
-  <!-- Dark Mode Toggle -->
-  <button id="mode-toggle" aria-label="Toggle dark mode">
-    <span class="light-icon">☀️</span>
-    <span class="dark-icon">🌙</span>
-  </button>
 
   <!-- Header -->
-  <header class="site-header scroll-reveal">
-    <nav class="nav" aria-label="Main navigation">
-      <div class="container flex-wrap">
-        <h1 class="logo"><a href="#" aria-current="page">Femi Olamijulo</a></h1>
+<header class="site-header scroll-reveal">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container flex-wrap">
+      <h1 class="logo"><a href="#" aria-current="page">Femi Olamijulo</a></h1>
+      
+      <div class="nav-right">
         <ul class="navbar">
           <li><a href="#about" class="active">About</a></li>
           <li><a href="sections/portfolio.html">Portfolio</a></li>
           <li><a href="sections/news.html">News</a></li>
           <li><a href="assets/Olufemi-Olamijulo-Resume.pdf" target="_blank" rel="noopener">CV</a></li>
         </ul>
+        
+        <!-- Enhanced Dark Mode Toggle -->
+        <button id="mode-toggle" aria-label="Toggle dark mode" class="header-mode-toggle">
+          <span class="light-icon" aria-hidden="true">☀️</span>
+          <span class="dark-icon" aria-hidden="true">🌙</span>
+          <span class="mode-tooltip"></span> <!-- Empty - will be filled by JS -->
+        </button>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
   <!-- Main Content -->
   <main class="page container scroll-reveal">
@@ -60,7 +65,6 @@
             <a href="https://github.com/femiolamijulo" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://twitter.com/_femi_o" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/in/femiolamijulo/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://orcid.org/0000-0002-7531-9282" target="_blank" rel="noopener" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
           </div>
         </div>
         <div class="hero-image">

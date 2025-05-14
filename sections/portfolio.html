@@ -15,24 +15,29 @@
 <body>
   <div id="particles-js" aria-hidden="true"></div>
 
-  <button id="mode-toggle" aria-label="Toggle dark mode">
-    <span class="light-icon">☀️</span>
-    <span class="dark-icon">🌙</span>
-  </button>
-
-  <header class="site-header scroll-reveal">
-    <nav class="nav" aria-label="Main navigation">
-      <div class="container flex-wrap">
-        <h1 class="logo"><a href="../index.html">Femi Olamijulo</a></h1>
+<header class="site-header scroll-reveal">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container flex-wrap">
+      <h1 class="logo"><a href="#" aria-current="page">Femi Olamijulo</a></h1>
+      
+      <div class="nav-right">
         <ul class="navbar">
-          <li><a href="../index.html#about">About</a></li>
-          <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="../assets/Olufemi-Olamijulo-Resume.pdf" target="_blank">CV</a></li>
+          <li><a href="../index.html">About</a></li>
+          <li><a href="portfolio.html"class="active">Portfolio</a></li>
+          <li><a href="news.html" >News</a></li>
+          <li><a href="../assets/Olufemi-Olamijulo-Resume.pdf" target="_blank" rel="noopener">CV</a></li>
         </ul>
+        
+        <!-- Enhanced Dark Mode Toggle -->
+        <button id="mode-toggle" aria-label="Toggle dark mode" class="header-mode-toggle">
+          <span class="light-icon" aria-hidden="true">☀️</span>
+          <span class="dark-icon" aria-hidden="true">🌙</span>
+          <span class="mode-tooltip"></span> <!-- Empty - will be filled by JS -->
+        </button>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
   <main class="page container scroll-reveal">
     <h1 class="header-name">Selected Projects</h1>
