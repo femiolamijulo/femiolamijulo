@@ -1,3 +1,22 @@
+/* Global Theme Variables */
+:root {
+  --fade-gradient: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+}
+
+.dark-mode {
+  --fade-gradient: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
 /* Hero Section Styles */
 .hero-section {
   position: relative;
@@ -11,6 +30,7 @@
   gap: 3rem;
   align-items: center;
   min-height: 80vh;
+  overflow: visible;
 }
 
 .hero-image {
@@ -19,13 +39,18 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  overflow: visible;
 }
 
 .profile-image {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  isolation: isolate;
   width: 100%;
   max-width: 400px;
   height: auto;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
   border-radius: 0 0 0 20px;
@@ -33,9 +58,6 @@
   opacity: 0;
   transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), 
               opacity 1s ease;
-  box-shadow: -20px 20px 40px rgba(0,0,0,0.1);
-  position: relative;
-  z-index: 1;
 }
 
 .profile-image.revealed {
@@ -49,11 +71,18 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30%;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--bg-color) 100%);
-  z-index: 2;
+  height: 30%; /* Adjust this to control how much of the bottom gets blurred */
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
+  backdrop-filter: blur(8px); /* This creates the blur effect */
+  -webkit-backdrop-filter: blur(8px); /* For Safari support */
+  mask: linear-gradient(
+    to bottom, 
+    transparent 0%, 
+    black 100%
+  );
 }
-
 
 .hero-text {
   max-width: 600px;
@@ -96,17 +125,17 @@
     padding-top: 2rem;
     gap: 2rem;
   }
-  
+
   .profile-image {
     max-width: 300px;
     transform: translateX(0);
   }
-  
+
   .hero-text {
     padding-right: 0;
     order: -1;
   }
-  
+
   .intro-name {
     font-size: 2.5rem;
   }
