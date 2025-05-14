@@ -1,21 +1,21 @@
-// assets/js/particles-config.js
 function updateParticlesForMode(mode) {
   if (typeof particlesJS !== 'function') return;
 
-  // Get particle count from CSS variable (default 80, 40 on mobile)
-  const particleCount = parseInt(getComputedStyle(document.documentElement)
-    .getPropertyValue('--particle-count')) || 80;
+  const particleCount = parseInt(
+    getComputedStyle(document.documentElement)
+      .getPropertyValue('--particle-count')
+  ) || 80;
 
   const config = {
     particles: {
-      number: { 
-        value: particleCount, 
-        density: { enable: true, value_area: 800 } 
+      number: {
+        value: particleCount,
+        density: { enable: true, value_area: 800 }
       },
       color: {
         value: mode === 'dark'
-          ? ["#7FFFD4", "#5F9EA0", "#00CED1"]  // Light colors for dark mode
-          : ["#034f40", "#5F9EA0", "#028476"]  // Darker colors for light mode
+          ? ["#7FFFD4", "#5F9EA0", "#00CED1"]
+          : ["#034f40", "#5F9EA0", "#028476"]
       },
       shape: { type: "circle" },
       opacity: {
@@ -44,40 +44,83 @@ function updateParticlesForMode(mode) {
       }
     },
     interactivity: {
-      detect_on: "canvas",
+      detect_on: "window",
       events: {
-        onhover: { enable: true, mode: "bubble" },
-        onclick: { enable: true, mode: "push" }
+        onhover: {
+          enable: true,
+          mode: ["bubble", "connect", "grab"]
+        },
+        onclick: {
+          enable: true,
+          mode: "push"
+        },
+        ondiv: {
+          selectors: ["header", "footer"],
+          enable: false,
+          mode: "repulse"
+        }
       },
       modes: {
-        bubble: { 
-          distance: 100, 
-          size: 8, 
+        bubble: {
+          distance: 100,
+          size: 8,
           duration: 0.3,
+          opacity: 0.8,
           color: mode === 'dark' ? "#7FFFD4" : "#034f40"
         },
-        push: { particles_nb: 4 }
+        push: {
+          particles_nb: 6,
+          quantity: 3
+        },
+        connect: {
+          distance: 150,
+          links: { opacity: 0.5 },
+          radius: 150
+        },
+        grab: {
+          distance: 150,
+          links: {
+            opacity: 0.3,
+            color: mode === 'dark' ? "#7FFFD4" : "#034f40"
+          }
+        },
+        repulse: {
+          distance: 100,
+          duration: 0.4
+        }
       }
     },
     retina_detect: true
   };
 
-  // Destroy existing particles before reinitializing
   if (window.pJSDom && window.pJSDom.length > 0) {
     window.pJSDom[0].pJS.fn.vendors.destroypJS();
     window.pJSDom = [];
   }
 
   particlesJS("particles-js", config);
+
+  // Sync mouse position for better interactivity
+  document.addEventListener('mousemove', function (e) {
+    if (window.pJSDom && window.pJSDom.length > 0) {
+      const pJS = window.pJSDom[0].pJS;
+      pJS.interactivity.mouse.pos_x = e.clientX;
+      pJS.interactivity.mouse.pos_y = e.clientY;
+    }
+  });
 }
 
-// Initialize particles on load
-document.addEventListener('DOMContentLoaded', function() {
+// Run on load
+document.addEventListener('DOMContentLoaded', function () {
   const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
   updateParticlesForMode(currentMode);
 });
 
-// Export for Node.js environment if needed
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { updateParticlesForMode };
-}
+// Re-init on resize
+window.addEventListener('resize', function () {
+  if (window.pJSDom && window.pJSDom.length > 0) {
+    window.pJSDom[0].pJS.fn.vendors.destroypJS();
+    const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    updateParticlesForMode(currentMode);
+  }
+});
