@@ -35,7 +35,7 @@
               opacity 1s ease;
   box-shadow: -20px 20px 40px rgba(0,0,0,0.1);
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .profile-image.revealed {
@@ -50,9 +50,10 @@
   left: 0;
   right: 0;
   height: 30%;
-  background: linear-gradient(to bottom, transparent 0%, var(--bg-color) 100%);
-  z-index: 1;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--bg-color) 100%);
+  z-index: 2;
 }
+
 
 .hero-text {
   max-width: 600px;
@@ -96,11 +97,6 @@
     gap: 2rem;
   }
   
-  .hero-image {
-    justify-content: center;
-    margin-top: 2rem;
-  }
-  
   .profile-image {
     max-width: 300px;
     transform: translateX(0);
@@ -115,3 +111,4 @@
     font-size: 2.5rem;
   }
 }
+
