@@ -20,12 +20,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
 </head>
 
 <body>
   <!-- Background Particles -->
   <div id="particles-js" aria-hidden="true"></div>
 
+<script src="assets/js/featured-news.js" defer></script>
 
   <!-- Header -->
 <header class="site-header scroll-reveal">
@@ -51,6 +53,7 @@
     </div>
   </nav>
 </header>
+
 
   <!-- Main Content -->
   <main class="page container scroll-reveal">
@@ -93,6 +96,16 @@
       </div>
     </section>
   </main>
+
+<section class="scroll-reveal">
+  <div class="container">
+    <h2 class="section-title">Recent Highlights</h2>
+    <div class="news-timeline" id="homepage-highlights" role="list"></div>
+    <div style="text-align:center; margin-top:1rem;">
+      <a href="sections/news.html" class="filter-button">See All News</a>
+    </div>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="site-footer scroll-reveal">

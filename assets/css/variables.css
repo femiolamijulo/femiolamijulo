@@ -53,3 +53,18 @@ button, .btn {
 button:hover, .btn:hover {
   background-color: var(--accent-hover);
 }
+
+.view-more-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+#view-more-button {
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  font-weight: bold;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 6px;
+}
