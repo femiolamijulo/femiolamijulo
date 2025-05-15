@@ -170,39 +170,6 @@
           filterNews(tag);
         });
       });
-
-      // Initialize particles.js if available
-      if (typeof particlesJS === 'function') {
-        try {
-          particlesJS("particles-js", {
-            particles: {
-              number: { value: 80, density: { enable: true, value_area: 800 } },
-              color: { value: ["#7FFFD4", "#5F9EA0", "#00CED1"] },
-              shape: { type: "circle" },
-              opacity: { value: 0.7, random: true },
-              size: { value: 4, random: true },
-              line_linked: { enable: true, distance: 130, color: "#cdece3", opacity: 0.2, width: 1 },
-              move: { enable: true, speed: 0.5, direction: "none", out_mode: "out" }
-            },
-            interactivity: {
-              detect_on: "canvas",
-              events: { 
-                onhover: { enable: true, mode: "bubble" }, 
-                onclick: { enable: true, mode: "push" } 
-              },
-              modes: { 
-                bubble: { distance: 100, size: 8, duration: 0.3 }, 
-                push: { particles_nb: 4 } 
-              }
-            },
-            retina_detect: true
-          });
-        } catch (e) {
-          console.error("Particles.js initialization failed:", e);
-        }
-      } else {
-        console.warn("Particles.js not loaded - background animation disabled");
-      }
     });
   </script>
 </body>
