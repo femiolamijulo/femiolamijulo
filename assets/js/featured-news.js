@@ -112,19 +112,21 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!container) return;
 
   const isHomepage = (
-  container.id === "homepage-highlights" ||
-  window.location.pathname === "/" ||
-  window.location.pathname.endsWith("/index.html") ||
-  window.location.pathname.endsWith("/femiolamijulo/") ||
-  window.location.pathname === "/femiolamijulo/index.html"
-);
+    container.id === "homepage-highlights" ||
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("/index.html") ||
+    window.location.pathname.endsWith("/femiolamijulo/") ||
+    window.location.pathname === "/femiolamijulo/index.html"
+  );
 
-  const preloadCount = isHomepage ? 3 : 5;
-  const itemsToRender = allNewsItems.slice(0, preloadCount);
+  // Homepage shows 3, news page shows all (but may hide some initially)
+  const initialLoadCount = isHomepage ? 3 : allNewsItems.length;
+  const itemsToRender = allNewsItems.slice(0, initialLoadCount);
 
-  itemsToRender.forEach(item => {
+  // Inject all items (but news page will hide extras via CSS/JS)
+  allNewsItems.forEach(item => {
     const article = document.createElement("article");
-    article.className = "news-item visible";
+    article.className = "news-item";
     article.setAttribute("data-tags", item.tags.join(" "));
     article.setAttribute("role", "listitem");
 
@@ -139,7 +141,17 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(article);
   });
 
-  // Scroll reveal
+  // Homepage: Only show first 3 items
+  if (isHomepage) {
+    const newsItems = document.querySelectorAll('.news-item');
+    newsItems.forEach((item, index) => {
+      if (index >= 3) {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Scroll reveal (unchanged)
   const revealElements = document.querySelectorAll(".scroll-reveal");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -222,8 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    viewMoreButton.addEventListener('click', revealNextBatch);
+    // Initialize - show all items by default on news page
     newsItems.forEach(item => item.classList.add('visible'));
     updateVisibility();
+    
+    viewMoreButton.addEventListener('click', revealNextBatch);
   }
 });
