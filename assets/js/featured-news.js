@@ -91,3 +91,126 @@ const allNewsItems = [
   }
 ];
 
+document.addEventListener("DOMContentLoaded", () => {
+  const container =
+    document.getElementById("news-container") ||
+    document.getElementById("homepage-highlights");
+
+  if (!container) return;
+
+  const isHomepage =
+    container?.id === "homepage-highlights" ||
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("/index.html") ||
+    window.location.pathname.endsWith("/femiolamijulo.github.io/");
+  const preloadCount = isHomepage ? 3 : 5;
+  const itemsToRender = allNewsItems.slice(0, preloadCount);
+
+
+  // Inject items
+  itemsToRender.forEach((item) => {
+    const article = document.createElement("article");
+    article.className = "news-item visible";
+    article.setAttribute("data-tags", item.tags.join(" "));
+    article.setAttribute("role", "listitem");
+
+    article.innerHTML = `
+      <img src="${item.img}" alt="${item.alt}" loading="lazy" width="300" height="200">
+      <div class="news-content">
+        <h3><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></h3>
+        <p>${item.description}<br><em>Source: ${item.source}</em></p>
+      </div>
+    `;
+
+    container.appendChild(article);
+  });
+
+  // Scroll reveal (runs on both pages)
+  const revealElements = document.querySelectorAll(".scroll-reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealElements.forEach((el) => observer.observe(el));
+
+  // Filtering + batching only on news page
+  if (!isHomepage) {
+    const filterButtons = document.querySelectorAll('.filter-button[data-tag]');
+    const newsItems = document.querySelectorAll('.news-item');
+    const noNews = document.querySelector('.no-news');
+    const viewMoreButton = document.getElementById('view-more-button');
+    const ITEMS_PER_BATCH = 3;
+
+    function updateVisibility() {
+      let visibleCount = 0;
+      let shown = 0;
+
+      newsItems.forEach(item => {
+        if (item.classList.contains('visible')) {
+          visibleCount++;
+          if (shown < ITEMS_PER_BATCH) {
+            item.style.display = '';
+            shown++;
+          } else {
+            item.style.display = 'none';
+          }
+          item.removeAttribute('hidden');
+        } else {
+          item.setAttribute('hidden', 'true');
+          item.style.display = 'none';
+        }
+      });
+
+      noNews.classList.toggle('visible', visibleCount === 0);
+      viewMoreButton.style.display = (visibleCount > ITEMS_PER_BATCH) ? 'inline-block' : 'none';
+    }
+
+    function revealNextBatch() {
+      let shown = 0;
+      newsItems.forEach(item => {
+        if (item.classList.contains('visible') && item.style.display === 'none') {
+          item.style.display = '';
+          shown++;
+          if (shown >= ITEMS_PER_BATCH) return;
+        }
+      });
+
+      const remaining = Array.from(newsItems).filter(item =>
+        item.classList.contains('visible') && item.style.display === 'none'
+      );
+      viewMoreButton.style.display = remaining.length > 0 ? 'inline-block' : 'none';
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tag = button.dataset.tag;
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+
+        newsItems.forEach(item => {
+          const tags = item.dataset.tags.toLowerCase().split(' ');
+          if (tag === 'all' || tags.includes(tag)) {
+            item.classList.add('visible');
+          } else {
+            item.classList.remove('visible');
+          }
+        });
+
+        updateVisibility();
+      });
+    });
+
+    viewMoreButton.addEventListener('click', revealNextBatch);
+    newsItems.forEach(item => item.classList.add('visible'));
+    updateVisibility();
+  }
+});
+
