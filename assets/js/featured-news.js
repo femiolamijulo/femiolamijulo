@@ -1,7 +1,19 @@
+const isNewsPage = window.location.pathname.includes("/sections/");
+const isGitHubPages = window.location.hostname === "femiolamijulo.github.io";
+
+// Set base path for images depending on environment and page
+const BASE_PATH = isGitHubPages
+  ? "/femiolamijulo/assets/news_photos/"
+  : (isNewsPage ? "../assets/news_photos/" : "assets/news_photos/");
+
+const THUMB_PATH = isGitHubPages
+  ? "/femiolamijulo/assets/thumbnails/"
+  : (isNewsPage ? "../assets/thumbnails/" : "assets/thumbnails/");
+
 const allNewsItems = [
   {
     title: "Award for Outstanding Leadership",
-    img: "/assets/news_photos/Outstanding.webp",
+    img: BASE_PATH + "Outstanding.webp",
     alt: "Outstanding Leadership Award in Urban Planning",
     url: "https://www.gsd.harvard.edu/urban-planning-design/fellowships-prizes-and-travel-programs/award-for-outstanding-leadership-in-urban-planning-and-urban-design/",
     description: "Recipient of the 2024 Award for Outstanding Leadership in Urban Planning and Urban Design.",
@@ -10,7 +22,7 @@ const allNewsItems = [
   },
   {
     title: "Rappaport Connects: Alumni Spotlight",
-    img: "/assets/news_photos/Rappaport.webp",
+    img: BASE_PATH + "Rappaport.webp",
     alt: "Rappaport Interview",
     url: "https://www.youtube.com/watch?v=SP8k8oyuAMc",
     description: "Interviewed on planning, equity, and GIS during and after Harvard.",
@@ -19,7 +31,7 @@ const allNewsItems = [
   },
   {
     title: "Harvard CGA March 2024 Update",
-    img: "/assets/news_photos/Everett_HKS.webp",
+    img: BASE_PATH + "Everett_HKS.webp",
     alt: "CGA 2024 News Archive",
     url: "https://gis.harvard.edu/news/archive/2024-03",
     description: "Work on spatial storytelling featured in the Center for Geographic Analysis’ spring roundup.",
@@ -28,7 +40,7 @@ const allNewsItems = [
   },
   {
     title: "Transforming Everett's Industrial Core",
-    img: "/assets/thumbnails/everett.gif",
+    img: THUMB_PATH + "everett.gif",
     alt: "Everett Redevelopment",
     url: "https://www.hks.harvard.edu/faculty-research/policy-topics/cities-communities/when-proposing-redevelopment-ideas-abandoned-95",
     description: "Field Lab proposal on mixed-use redevelopment that won the 2024 Esri Innovation Prize.",
@@ -37,7 +49,7 @@ const allNewsItems = [
   },
   {
     title: "Presentation at Everett City Hall",
-    img: "/assets/news_photos/everett_independent.webp",
+    img: BASE_PATH + "everett_independent.webp",
     alt: "City Hall Presentation",
     url: "https://everettindependent.com/2023/05/10/harvard-kennedy-students-present-at-city-hall/",
     description: "Shared green corridor concepts with local officials and residents.",
@@ -46,7 +58,7 @@ const allNewsItems = [
   },
   {
     title: "Everett Community Presentation",
-    img: "/assets/news_photos/everett_advocate.webp",
+    img: BASE_PATH + "everett_advocate.webp",
     alt: "Everett Community Presentation",
     url: "https://advocatenews.net/everett/news/harvard-kennedy-school-students-present-at-city-hall/",
     description: "Featured in the Advocate for presenting mixed-use corridor concepts to local leaders in Everett, MA.",
@@ -55,7 +67,7 @@ const allNewsItems = [
   },
   {
     title: "2024 Esri Innovation Award",
-    img: "/assets/news_photos/EIP_award.webp",
+    img: BASE_PATH + "EIP_award.webp",
     alt: "Esri Innovation Award",
     url: "https://gis.harvard.edu/news/2024-eip-award-winner",
     description: "Recognized for using geospatial storytelling in equity-focused planning.",
@@ -64,7 +76,7 @@ const allNewsItems = [
   },
   {
     title: "GreenEconomiX: SDG Project Spotlight",
-    img: "/assets/news_photos/GLC.webp",
+    img: BASE_PATH + "GLC.webp",
     alt: "GreenEconomiX SDG Project",
     url: "https://www.leadership-challenge.org/sdg-projects/greeneconomix%3A-minimizing-barriers%2C-maximizing-impact",
     description: "Recognized by the Leadership Challenge for work on minimizing barriers to green infrastructure in Africa.",
@@ -73,7 +85,7 @@ const allNewsItems = [
   },
   {
     title: "Harvard HCIP Fellowship",
-    img: "/assets/news_photos/Headshot.webp",
+    img: BASE_PATH + "Headshot.webp",
     alt: "HCIP Fellowship Announcement",
     url: "https://www.hks.harvard.edu/centers/mrcbg/programs/hcip/fellows",
     description: "Selected as a 2024 Fellow of the Harvard Climate and Infrastructure Policy Program.",
@@ -82,7 +94,7 @@ const allNewsItems = [
   },
   {
     title: "Stories We Should Tell",
-    img: "/assets/news_photos/Stories_we_should_tell.webp",
+    img: BASE_PATH + "Stories_we_should_tell.webp",
     alt: "Storytelling Exhibit",
     url: "https://www.gsd.harvard.edu/exhibition/stories-we-should-tell/",
     description: "Featured in a GSD exhibit uplifting African and diasporic spatial storytelling.",
@@ -98,17 +110,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!container) return;
 
-  const isHomepage =
-    container?.id === "homepage-highlights" ||
-    window.location.pathname === "/" ||
-    window.location.pathname.endsWith("/index.html") ||
-    window.location.pathname.endsWith("/femiolamijulo.github.io/");
+  const isHomepage = container.id === "homepage-highlights";
   const preloadCount = isHomepage ? 3 : 5;
   const itemsToRender = allNewsItems.slice(0, preloadCount);
 
-
-  // Inject items
-  itemsToRender.forEach((item) => {
+  itemsToRender.forEach(item => {
     const article = document.createElement("article");
     article.className = "news-item visible";
     article.setAttribute("data-tags", item.tags.join(" "));
@@ -125,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(article);
   });
 
-  // Scroll reveal (runs on both pages)
+  // Scroll reveal
   const revealElements = document.querySelectorAll(".scroll-reveal");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -213,4 +219,3 @@ document.addEventListener("DOMContentLoaded", () => {
     updateVisibility();
   }
 });
-
