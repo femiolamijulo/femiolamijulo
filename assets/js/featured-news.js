@@ -21,6 +21,15 @@ const allNewsItems = [
     tags: ["award"]
   },
   {
+    title: "Transforming Everett's Industrial Core",
+    img: THUMB_PATH + "everett.gif",
+    alt: "Everett Redevelopment",
+    url: "https://www.hks.harvard.edu/faculty-research/policy-topics/cities-communities/when-proposing-redevelopment-ideas-abandoned-95",
+    description: "Field Lab proposal on mixed-use redevelopment that won the 2024 Esri Innovation Prize.",
+    source: "Harvard Kennedy School",
+    tags: ["everett", "award"]
+  },
+  {
     title: "Rappaport Connects: Alumni Spotlight",
     img: BASE_PATH + "Rappaport.webp",
     alt: "Rappaport Interview",
@@ -28,6 +37,15 @@ const allNewsItems = [
     description: "Interviewed on planning, equity, and GIS during and after Harvard.",
     source: "Rappaport Institute",
     tags: ["storytelling"]
+  },
+  {
+    title: "2024 Esri Innovation Award",
+    img: BASE_PATH + "EIP_award.webp",
+    alt: "Esri Innovation Award",
+    url: "https://gis.harvard.edu/news/2024-eip-award-winner",
+    description: "Recognized for using geospatial storytelling in equity-focused planning.",
+    source: "Harvard CGA",
+    tags: ["award"]
   },
   {
     title: "Harvard CGA March 2024 Update",
@@ -38,15 +56,7 @@ const allNewsItems = [
     source: "Harvard CGA",
     tags: ["storytelling", "award"]
   },
-  {
-    title: "Transforming Everett's Industrial Core",
-    img: THUMB_PATH + "everett.gif",
-    alt: "Everett Redevelopment",
-    url: "https://www.hks.harvard.edu/faculty-research/policy-topics/cities-communities/when-proposing-redevelopment-ideas-abandoned-95",
-    description: "Field Lab proposal on mixed-use redevelopment that won the 2024 Esri Innovation Prize.",
-    source: "Harvard Kennedy School",
-    tags: ["everett", "award"]
-  },
+  
   {
     title: "Presentation at Everett City Hall",
     img: BASE_PATH + "everett_independent.webp",
@@ -64,15 +74,6 @@ const allNewsItems = [
     description: "Featured in the Advocate for presenting mixed-use corridor concepts to local leaders in Everett, MA.",
     source: "Advocate News",
     tags: ["everett"]
-  },
-  {
-    title: "2024 Esri Innovation Award",
-    img: BASE_PATH + "EIP_award.webp",
-    alt: "Esri Innovation Award",
-    url: "https://gis.harvard.edu/news/2024-eip-award-winner",
-    description: "Recognized for using geospatial storytelling in equity-focused planning.",
-    source: "Harvard CGA",
-    tags: ["award"]
   },
   {
     title: "GreenEconomiX: SDG Project Spotlight",
@@ -110,7 +111,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!container) return;
 
-  const isHomepage = container.id === "homepage-highlights";
+  const isHomepage = (
+  container.id === "homepage-highlights" ||
+  window.location.pathname === "/" ||
+  window.location.pathname.endsWith("/index.html") ||
+  window.location.pathname.endsWith("/femiolamijulo/") ||
+  window.location.pathname === "/femiolamijulo/index.html"
+);
+
   const preloadCount = isHomepage ? 3 : 5;
   const itemsToRender = allNewsItems.slice(0, preloadCount);
 
