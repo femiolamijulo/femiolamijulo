@@ -10,7 +10,7 @@ const allNewsItems = [
   },
   {
     title: "Rappaport Connects: Alumni Spotlight",
-    img: "../assets/news_photos/Rappaport.webp.png",
+    img: "../assets/news_photos/Rappaport.webp",
     alt: "Rappaport Interview",
     url: "https://www.youtube.com/watch?v=SP8k8oyuAMc",
     description: "Interviewed on planning, equity, and GIS during and after Harvard.",
@@ -19,7 +19,7 @@ const allNewsItems = [
   },
   {
     title: "Harvard CGA March 2024 Update",
-    img: "../assets/news_photos/Everett_HKS.webp.png",
+    img: "../assets/news_photos/Everett_HKS.webp",
     alt: "CGA 2024 News Archive",
     url: "https://gis.harvard.edu/news/archive/2024-03",
     description: "Work on spatial storytelling featured in the Center for Geographic Analysis’ spring roundup.",
@@ -64,7 +64,7 @@ const allNewsItems = [
   },
   {
     title: "GreenEconomiX: SDG Project Spotlight",
-    img: "../assets/news_photos/GLC.webp.png",
+    img: "../assets/news_photos/GLC.webp",
     alt: "GreenEconomiX SDG Project",
     url: "https://www.leadership-challenge.org/sdg-projects/greeneconomix%3A-minimizing-barriers%2C-maximizing-impact",
     description: "Recognized by the Leadership Challenge for work on minimizing barriers to green infrastructure in Africa.",
