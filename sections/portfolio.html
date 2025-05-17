@@ -184,7 +184,6 @@
       // Project filtering system
       const filterButtons = document.querySelectorAll('.filter-button');
       const projectCards = document.querySelectorAll('.project-card');
-      const noProjects = document.querySelector('.no-projects');
 
       function updateVisibility() {
         let visibleCount = 0;
@@ -198,7 +197,7 @@
           }
         });
 
-        noProjects.classList.toggle('visible', visibleCount === 0);
+      // noProjects logic removed
       }
 
       function filterProjects(tag) {
