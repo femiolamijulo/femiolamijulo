@@ -83,7 +83,7 @@ Examined some of the critical events that have shaped the Harlem of the West and
 | 2024 | 🥇 Esri Innovation Prize – Harvard Student of the Year |
 | 2024 | 🎙️ Moderator, Harvard Climate Leaders Conference |
 | 2024 | 🏅 Award for Outstanding Leadership in Urban Planning & Design at Harvard |
-| 2024 | 🌍 Young Leader, Global Leadership Challenge (University of Oxford & St. Gallen Symposium)
+| 2024 | 🌍 Young Leader, Global Leadership Challenge (University of Oxford & St. Gallen Symposium) |
 | 2023 | 🛰️ Capstone Consultant, United Nations Office of the Special Adviser on Africa (Voluntary Carbon Markets & Mining) |
 | 2023 | 🤝 Ambassador Juster Fellow, United Nations Secretariat |
 | 2021 | 🎓 Harvard University President’s Scholar |
@@ -104,5 +104,5 @@ Examined some of the critical events that have shaped the Harlem of the West and
 > — Femi Olamijulo
 
 <p align="center">
-  <sub><i>Last updated: March 2025 • Built with ❤️ and a thirst to learn how to be better.</i></sub>
+  <sub><i>Last updated: March 2026 • Built with ❤️ and a thirst to learn how to be better.</i></sub>
 </p>

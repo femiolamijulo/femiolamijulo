@@ -119,12 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.pathname === "/femiolamijulo/index.html"
   );
 
-  // Homepage shows 3, news page shows all (but may hide some initially)
-  const initialLoadCount = isHomepage ? 3 : allNewsItems.length;
-  const itemsToRender = allNewsItems.slice(0, initialLoadCount);
+  // Homepage shows only 3, news page renders all
+  const itemsToRender = isHomepage ? allNewsItems.slice(0, 3) : allNewsItems;
 
-  // Inject all items (but news page will hide extras via CSS/JS)
-  allNewsItems.forEach(item => {
+  itemsToRender.forEach(item => {
     const article = document.createElement("article");
     article.className = "news-item";
     article.setAttribute("data-tags", item.tags.join(" "));
@@ -140,16 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.appendChild(article);
   });
-
-  // Homepage: Only show first 3 items
-  if (isHomepage) {
-    const newsItems = document.querySelectorAll('.news-item');
-    newsItems.forEach((item, index) => {
-      if (index >= 3) {
-        item.style.display = 'none';
-      }
-    });
-  }
 
   // Scroll reveal (unchanged)
   const revealElements = document.querySelectorAll(".scroll-reveal");
@@ -197,13 +185,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function revealNextBatch() {
       let shown = 0;
-      newsItems.forEach(item => {
+      for (const item of newsItems) {
         if (item.classList.contains('visible') && item.style.display === 'none') {
           item.style.display = '';
           shown++;
-          if (shown >= ITEMS_PER_BATCH) return;
+          if (shown >= ITEMS_PER_BATCH) break;
         }
-      });
+      }
 
       const remaining = Array.from(newsItems).filter(item =>
         item.classList.contains('visible') && item.style.display === 'none'
