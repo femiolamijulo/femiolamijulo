@@ -12,6 +12,33 @@ const THUMB_PATH = isGitHubPages
 
 const allNewsItems = [
   {
+    title: "E Don Kast: Citizen-Led Election Transparency",
+    img: BASE_PATH + "Headshot.webp",
+    alt: "E Don Kast election platform",
+    url: "https://techcabal.com/2026/02/26/the-citizen-led-platform-trying-to-make-nigerias-vote-collation-transparent/",
+    description: "Built E Don Kast, a platform mapping 176,000+ polling units across Nigeria for real-time citizen-led election result collation.",
+    source: "TechCabal",
+    tags: ["civic-tech", "storytelling"]
+  },
+  {
+    title: "Peer-Reviewed Publication in Peace Studies Journal",
+    img: BASE_PATH + "Headshot.webp",
+    alt: "Peace Studies Journal publication",
+    url: "https://peacestudiesjournal.org/",
+    description: "Published a peer-reviewed film review in Peace Studies Journal (Vol. 18, Issue 3, December 2025).",
+    source: "Peace Studies Journal",
+    tags: ["storytelling"]
+  },
+  {
+    title: "Rappaport: VR for Urban Planning",
+    img: THUMB_PATH + "everett.gif",
+    alt: "Virtual Reality urban planning presentation",
+    url: "https://rappaportfoundation.org/making-the-case-to-create-a-public-transportation-hub-using-virtual-reality/",
+    description: "Pioneered VR-powered urban planning presentations for the Everett transportation hub proposal at Harvard.",
+    source: "Rappaport Foundation",
+    tags: ["everett", "civic-tech"]
+  },
+  {
     title: "Award for Outstanding Leadership",
     img: BASE_PATH + "Outstanding.webp",
     alt: "Outstanding Leadership Award in Urban Planning",
