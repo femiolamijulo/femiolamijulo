@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #060C18;
+  color: #E8E2D0;
+  font-family: "DM Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar matching the aesthetic */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060C18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 168, 75, 0.2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 168, 75, 0.4);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(200, 168, 75, 0.3);
+  color: #E8E2D0;
+}
+
+/* Fullscreen styles for present mode */
+:fullscreen {
+  background: #060C18;
+}
+
+/* Form element resets for dark theme */
+input,
+textarea,
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background: #0A1628;
+  color: #E8E2D0;
+}
