@@ -29,6 +29,13 @@ With dual Master’s degrees in **Urban Planning** and **Public Policy** from **
 
 ## 📘 Signature Projects
 
+### 🗳️ *E Don Kast*: Citizen-Led Election Transparency
+Built a civic tech platform for real-time, crowdsourced election result collation in Nigeria. Maps **176,000+ polling units** and **8,000+ wards** nationwide, allowing voters to upload Form EC8A results with confidence scoring.
+📰 [Read the TechCabal feature →](https://techcabal.com/2026/02/26/the-citizen-led-platform-trying-to-make-nigerias-vote-collation-transparent/)
+💻 Web App • GIS • Crowdsourcing • Election Integrity
+
+---
+
 ### 🛰️ *Africa Futures*: Mining, Forests & the Just Transition  
 Analyzed satellite imagery + mine locations in South Katanga to uncover how **artisanal cobalt mining** drives deforestation and labor exploitation.  
 📄 [Read the full Belfer publication →](assets/Africa%20Futures%20Project%20publication.pdf)  
@@ -80,10 +87,12 @@ Examined some of the critical events that have shaped the Harlem of the West and
 
 | Year | Recognition |
 |------|-------------|
+| 2026 | 🗳️ E Don Kast featured in TechCabal – Citizen-led election transparency platform |
+| 2025 | 📄 Peer-reviewed publication in Peace Studies Journal (Vol. 18, Issue 3) |
 | 2024 | 🥇 Esri Innovation Prize – Harvard Student of the Year |
 | 2024 | 🎙️ Moderator, Harvard Climate Leaders Conference |
 | 2024 | 🏅 Award for Outstanding Leadership in Urban Planning & Design at Harvard |
-| 2024 | 🌍 Young Leader, Global Leadership Challenge (University of Oxford & St. Gallen Symposium)
+| 2024 | 🌍 Young Leader, Global Leadership Challenge (University of Oxford & St. Gallen Symposium) |
 | 2023 | 🛰️ Capstone Consultant, United Nations Office of the Special Adviser on Africa (Voluntary Carbon Markets & Mining) |
 | 2023 | 🤝 Ambassador Juster Fellow, United Nations Secretariat |
 | 2021 | 🎓 Harvard University President’s Scholar |
@@ -104,5 +113,5 @@ Examined some of the critical events that have shaped the Harlem of the West and
 > — Femi Olamijulo
 
 <p align="center">
-  <sub><i>Last updated: March 2025 • Built with ❤️ and a thirst to learn how to be better.</i></sub>
+  <sub><i>Last updated: March 2026 • Built with ❤️ and a thirst to learn how to be better.</i></sub>
 </p>

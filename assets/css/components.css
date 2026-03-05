@@ -250,28 +250,18 @@
 }
 
 .no-news {
-  display: none;
   text-align: center;
   padding: 2rem;
   color: var(--text-secondary);
   font-style: italic;
   opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.no-news.visible {
-  display: block;
-  opacity: 1;
-}
-
-.no-news {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .no-news.visible {
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
 }
 
 /* Intro + Highlight Box */

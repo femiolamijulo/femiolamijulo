@@ -99,16 +99,16 @@ function updateParticlesForMode(mode) {
   }
 
   particlesJS("particles-js", config);
-
-  // Sync mouse position for better interactivity
-  document.addEventListener('mousemove', function (e) {
-    if (window.pJSDom && window.pJSDom.length > 0) {
-      const pJS = window.pJSDom[0].pJS;
-      pJS.interactivity.mouse.pos_x = e.clientX;
-      pJS.interactivity.mouse.pos_y = e.clientY;
-    }
-  });
 }
+
+// Sync mouse position for better interactivity (single listener)
+document.addEventListener('mousemove', function (e) {
+  if (window.pJSDom && window.pJSDom.length > 0) {
+    const pJS = window.pJSDom[0].pJS;
+    pJS.interactivity.mouse.pos_x = e.clientX;
+    pJS.interactivity.mouse.pos_y = e.clientY;
+  }
+});
 
 // Run on load
 document.addEventListener('DOMContentLoaded', function () {
@@ -116,11 +116,15 @@ document.addEventListener('DOMContentLoaded', function () {
   updateParticlesForMode(currentMode);
 });
 
-// Re-init on resize
+// Debounced re-init on resize
+let resizeTimer;
 window.addEventListener('resize', function () {
-  if (window.pJSDom && window.pJSDom.length > 0) {
-    window.pJSDom[0].pJS.fn.vendors.destroypJS();
-    const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    updateParticlesForMode(currentMode);
-  }
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function () {
+    if (window.pJSDom && window.pJSDom.length > 0) {
+      window.pJSDom[0].pJS.fn.vendors.destroypJS();
+      const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      updateParticlesForMode(currentMode);
+    }
+  }, 250);
 });

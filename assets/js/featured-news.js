@@ -12,6 +12,33 @@ const THUMB_PATH = isGitHubPages
 
 const allNewsItems = [
   {
+    title: "E Don Kast: Citizen-Led Election Transparency",
+    img: BASE_PATH + "Headshot.webp",
+    alt: "E Don Kast election platform",
+    url: "https://techcabal.com/2026/02/26/the-citizen-led-platform-trying-to-make-nigerias-vote-collation-transparent/",
+    description: "Built E Don Kast, a platform mapping 176,000+ polling units across Nigeria for real-time citizen-led election result collation.",
+    source: "TechCabal",
+    tags: ["civic-tech", "storytelling"]
+  },
+  {
+    title: "Peer-Reviewed Publication in Peace Studies Journal",
+    img: BASE_PATH + "Headshot.webp",
+    alt: "Peace Studies Journal publication",
+    url: "https://peacestudiesjournal.org/",
+    description: "Published a peer-reviewed film review in Peace Studies Journal (Vol. 18, Issue 3, December 2025).",
+    source: "Peace Studies Journal",
+    tags: ["storytelling"]
+  },
+  {
+    title: "Rappaport: VR for Urban Planning",
+    img: THUMB_PATH + "everett.gif",
+    alt: "Virtual Reality urban planning presentation",
+    url: "https://rappaportfoundation.org/making-the-case-to-create-a-public-transportation-hub-using-virtual-reality/",
+    description: "Pioneered VR-powered urban planning presentations for the Everett transportation hub proposal at Harvard.",
+    source: "Rappaport Foundation",
+    tags: ["everett", "civic-tech"]
+  },
+  {
     title: "Award for Outstanding Leadership",
     img: BASE_PATH + "Outstanding.webp",
     alt: "Outstanding Leadership Award in Urban Planning",
@@ -119,12 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.pathname === "/femiolamijulo/index.html"
   );
 
-  // Homepage shows 3, news page shows all (but may hide some initially)
-  const initialLoadCount = isHomepage ? 3 : allNewsItems.length;
-  const itemsToRender = allNewsItems.slice(0, initialLoadCount);
+  // Homepage shows only 3, news page renders all
+  const itemsToRender = isHomepage ? allNewsItems.slice(0, 3) : allNewsItems;
 
-  // Inject all items (but news page will hide extras via CSS/JS)
-  allNewsItems.forEach(item => {
+  itemsToRender.forEach(item => {
     const article = document.createElement("article");
     article.className = "news-item";
     article.setAttribute("data-tags", item.tags.join(" "));
@@ -140,16 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.appendChild(article);
   });
-
-  // Homepage: Only show first 3 items
-  if (isHomepage) {
-    const newsItems = document.querySelectorAll('.news-item');
-    newsItems.forEach((item, index) => {
-      if (index >= 3) {
-        item.style.display = 'none';
-      }
-    });
-  }
 
   // Scroll reveal (unchanged)
   const revealElements = document.querySelectorAll(".scroll-reveal");
@@ -197,13 +212,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function revealNextBatch() {
       let shown = 0;
-      newsItems.forEach(item => {
+      for (const item of newsItems) {
         if (item.classList.contains('visible') && item.style.display === 'none') {
           item.style.display = '';
           shown++;
-          if (shown >= ITEMS_PER_BATCH) return;
+          if (shown >= ITEMS_PER_BATCH) break;
         }
-      });
+      }
 
       const remaining = Array.from(newsItems).filter(item =>
         item.classList.contains('visible') && item.style.display === 'none'
