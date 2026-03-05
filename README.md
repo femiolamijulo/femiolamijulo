@@ -88,7 +88,7 @@ Examined some of the critical events that have shaped the Harlem of the West and
 | Year | Recognition |
 |------|-------------|
 | 2026 | 🗳️ E Don Kast featured in TechCabal – Citizen-led election transparency platform |
-| 2025 | 📄 Peer-reviewed publication in Peace Studies Journal (Vol. 18, Issue 3) |
+| 2025 | 🏛️ Governor's Fellow, Yale Tobin Center for Economic Policy – CT Department of Transportation |
 | 2024 | 🥇 Esri Innovation Prize – Harvard Student of the Year |
 | 2024 | 🎙️ Moderator, Harvard Climate Leaders Conference |
 | 2024 | 🏅 Award for Outstanding Leadership in Urban Planning & Design at Harvard |

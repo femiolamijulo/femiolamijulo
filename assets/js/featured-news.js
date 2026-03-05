@@ -21,13 +21,13 @@ const allNewsItems = [
     tags: ["civic-tech", "storytelling"]
   },
   {
-    title: "Peer-Reviewed Publication in Peace Studies Journal",
+    title: "Governor's Fellow at Yale Tobin Center",
     img: BASE_PATH + "Headshot.webp",
-    alt: "Peace Studies Journal publication",
-    url: "https://peacestudiesjournal.org/",
-    description: "Published a peer-reviewed film review in Peace Studies Journal (Vol. 18, Issue 3, December 2025).",
-    source: "Peace Studies Journal",
-    tags: ["storytelling"]
+    alt: "Yale Tobin Center Governor's Fellowship",
+    url: "https://tobin.yale.edu/connecticut-governors-fellowship-program/programs/governors-fellowship-program/current-governors-fellows",
+    description: "Selected as a Governor's Fellow through the Yale Tobin Center for Economic Policy, leading knowledge management at the Connecticut Department of Transportation.",
+    source: "Yale Tobin Center",
+    tags: ["civic-tech", "award"]
   },
   {
     title: "Rappaport: VR for Urban Planning",
